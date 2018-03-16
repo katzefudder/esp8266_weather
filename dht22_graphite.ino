@@ -12,7 +12,7 @@ ESP8266WiFiMulti WiFiMulti;
 DHT dht(DHTPIN, DHTTYPE);
 
 #define DEFAULT_PAUSE 10 // seconds to pause
-#define GRAPHITE_IP 52,57,84,177
+#define GRAPHITE_IP 192,168,100,1
 #define GRAPHITE_PORT 2003
 
 #include <ntp.h>
@@ -57,7 +57,7 @@ void setup() {
     setSyncProvider(getNTPtime);
     delay(1000);
   }
-  //blinking led if wifi is connected and time is synced
+
   for (int i=1;i<10;i++){
     digitalWrite(LED_BUILTIN, LOW);
     delay(50);
@@ -70,7 +70,7 @@ void setup() {
 
 void loop() {
   collectAndSendData();
-  // pause 15sec
+  // pause
   delay(DEFAULT_PAUSE * 1000);
 }
 
@@ -89,7 +89,7 @@ void collectAndSendData() {
   Udp.endPacket();
 
   Udp.beginPacket(remoteIP, remotePort);
-  Udp.write("systems.nodemcu.temp ");
+  Udp.write("systems.nodemcu.temperature ");
   Udp.print(temp);
   Udp.write(" ");
   Udp.println(timestamp);
@@ -124,4 +124,3 @@ time_t getNTPtime(void)
 {
   return NTPclient.getNtpTime();
 }
-
