@@ -4,6 +4,10 @@ Metring temperature, humidity and light with a
 "AZDelivery NodeMCU Lua Amica Module V2 ESP8266"
 https://www.amazon.de/AZDelivery-NodeMCU-ESP8266-ESP-12E-Development/dp/B06Y1LZLLY/ref=sr_1_2
 
+![OLED Display](img/oled.jpg)
+
+![Fritzing](img/fritzing.jpg)
+
 ## Libraries used
 
 ### Adafruit Sensor Library
