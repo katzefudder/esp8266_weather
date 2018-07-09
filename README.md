@@ -16,6 +16,5 @@ https://github.com/PaulStoffregen/Time
 https://github.com/moeur/Arduino_ESP8266
 
 ## TODO
-Layout with Fritzing (http://fritzing.org)
 List all parts
 Add Photos
